@@ -215,6 +215,11 @@ PrefabInstance:
       propertyPath: walkSpeed
       value: 5.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114051214696948948, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
+        type: 3}
+      propertyPath: canJump
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
 --- !u!1 &870672069
@@ -364,24 +369,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577044471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 140e4b54e3c73da47b1bb4223697c132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1633334982 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4231926171391162507, guid: a0fe12deb38629f4b969c26392c923ce,
-    type: 3}
-  m_PrefabInstance: {fileID: 4231926169758879309}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1633334983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633334982}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 140e4b54e3c73da47b1bb4223697c132, type: 3}

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4231926171391162506}
   - component: {fileID: 5017457920870524446}
+  - component: {fileID: 6627732891889148056}
   m_Layer: 0
   m_Name: LevelLoader
   m_TagString: Untagged
@@ -41,5 +42,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68a694401fda1b64ea55005ee145a641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6627732891889148056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231926171391162507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140e4b54e3c73da47b1bb4223697c132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
