@@ -131,17 +131,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstPerson-AIO
       objectReference: {fileID: 0}
+    - target: {fileID: 4288335847994348, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4448068258976056, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.1082783
+      value: 14.438278
       objectReference: {fileID: 0}
     - target: {fileID: 4448068258976056, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 60.063347
+      value: 31.803347
       objectReference: {fileID: 0}
     - target: {fileID: 4448068258976056, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -55.333824
+      value: -39.07383
       objectReference: {fileID: 0}
     - target: {fileID: 4448068258976056, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
       propertyPath: m_LocalRotation.x
@@ -219,6 +223,16 @@ PrefabInstance:
         type: 3}
       propertyPath: canJump
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136239539305442568, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
+        type: 3}
+      propertyPath: m_Height
+      value: 2.8574023
+      objectReference: {fileID: 0}
+    - target: {fileID: 136239539305442568, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.4287014
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
@@ -420,7 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_player: {fileID: 2062772414}
   m_currentStage: 0
-  m_stageScenes: []
+  m_playerCamera: {fileID: 1959187076}
 --- !u!114 &1822763663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +447,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140e4b54e3c73da47b1bb4223697c132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1959187076 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4288335847994348, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
+    type: 3}
+  m_PrefabInstance: {fileID: 129050362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2062772414 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1743903104223250, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
@@ -517,6 +537,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017457920870524446, guid: a0fe12deb38629f4b969c26392c923ce,
+        type: 3}
+      propertyPath: m_cameraHeight.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017457920870524446, guid: a0fe12deb38629f4b969c26392c923ce,
+        type: 3}
+      propertyPath: m_cameraHeight.Array.data[1]
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0fe12deb38629f4b969c26392c923ce, type: 3}

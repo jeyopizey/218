@@ -17,7 +17,7 @@ public class Dagger : MonoBehaviour
         {
             m_cannon = p_cannon;
         }
-        // transform.rotation.eulerAngles = 
+        transform.rotation = Quaternion.Euler(new Vector3(35, -31, -76));
         Destroy(this.gameObject, 15);
     }
     void Update()
@@ -36,14 +36,17 @@ public class Dagger : MonoBehaviour
                 //if (m_cannon.ObjectsToTele.Count == 0) { return; }
                 for (int i = 0; i < m_cannon.ObjectsToTele.Count; i++)
                 {
-                    m_cannon.ObjectsToTele[i].transform.position = this.transform.position;
+					if ( m_cannon.ObjectsToTele[i] == null) { continue; }
                     
                     if (m_cannon.ObjectsToTele[i].transform.tag != "Player")
                     {
-                        m_cannon.ObjectsToTele[i].transform.position = new Vector3(this.transform.position.x + Random.Range(0.1f, 0.5f),
-                                                                                    this.transform.position.y + Random.Range(0.1f, 0.5f),
-                                                                                    this.transform.position.z + Random.Range(0.1f, 0.5f));
-                    }
+						m_cannon.ObjectsToTele[i].transform.position = this.transform.position - (p_col.transform.position - m_shootDir).normalized * 2.5f;
+                        // m_cannon.ObjectsToTele[i].transform.position = new Vector3(this.transform.position.x + Random.Range(0.1f, 0.5f),
+                                                                                    // this.transform.position.y + Random.Range(0.1f, 0.5f),
+                                                                                    // this.transform.position.z + Random.Range(0.1f, 0.5f));
+                    } else {
+                    	m_cannon.ObjectsToTele[i].transform.position = this.transform.position - (p_col.transform.position - m_shootDir).normalized * 2.5f;
+					}
                 }
             }
             else 

@@ -90,7 +90,7 @@ Material:
     - _ZWrite: 1
     - _isInnerAlphaBlendOrColor: 0
     m_Colors:
-    - _AlbedoColor: {r: 0.3565058, g: 0.3897059, b: 0.30374137, a: 0.503}
+    - _AlbedoColor: {r: 0.2901961, g: 0.4901961, b: 0.5176471, a: 0.503}
     - _BumpDirection: {r: 1, g: 1, b: -1, a: 1}
     - _BumpTiling: {r: 1, g: 1, b: -2, a: 3}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,6 +98,6 @@ Material:
     - _Foam: {r: 0.1, g: 0.375, b: 0, a: 0}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _InvFadeParemeter: {r: 0.2, g: 0.39, b: 0.5, a: 1}
-    - _SpecularColor: {r: 0.46219125, g: 0.5588235, b: 0.33282873, a: 0}
+    - _SpecularColor: {r: 0.29803923, g: 0.70980394, b: 0.73333335, a: 0}
     - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
