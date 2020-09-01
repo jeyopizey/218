@@ -72,7 +72,7 @@ public class LowPolyWaterv2Reflection : MonoBehaviour
         reflectionCamera.transform.position = newpos;
         var euler = cam.transform.eulerAngles;
         reflectionCamera.transform.eulerAngles = new Vector3(0, euler.y, euler.z);
-        reflectionCamera.Render();
+        // reflectionCamera.Render();
         reflectionCamera.transform.position = oldpos;
         GL.invertCulling = false;
         var materials = rend.sharedMaterials;
