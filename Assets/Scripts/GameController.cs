@@ -9,12 +9,25 @@ public class GameController : MonoInstance<GameController>
 	[SerializeField]int m_currentStage;
 	[SerializeField]Transform m_playerCamera;
 	[SerializeField]private List<float> m_cameraHeight = new List<float>();
-    
+	[SerializeField]private List<float> m_playerSpeed = new List<float>();
+	[SerializeField]private float m_walkSpeed = 9f;
+	
+    private Transform m_respawnPos;
+	void Start()
+	{
+		if (m_currentStage == 2)
+		{
+			ShootController.Instance.CanShoot = true;
+		}
+		CheckpointManager.Instance.CurrentCheckpoint = StartPointManager.Instance.StartPoint;
+	}
+
 	public void StartStage()
 	{
-		m_playerCamera.position = new Vector3(m_playerCamera.position.x, m_cameraHeight[m_currentStage], m_playerCamera.position.z);
+		CheckpointManager.Instance.CurrentCheckpoint = StartPointManager.Instance.StartPoint;
+		m_playerCamera.localPosition = new Vector3(0, m_cameraHeight[m_currentStage], 0);
+		m_walkSpeed = m_playerSpeed[m_currentStage];
 		SceneManager.LoadScene("Stage"+ (GameController.Instance.CurrentStage + 1) );
-		m_player.transform.position = StartPointManager.Instance.StartPoint.position;
 	}
 
 	public void Respawn()
@@ -26,5 +39,10 @@ public class GameController : MonoInstance<GameController>
 	{
 		get { return m_currentStage; }
 		set { m_currentStage = value; }
+	}
+
+	public float WalkSpeed
+	{
+		get { return m_walkSpeed; }
 	}
 }

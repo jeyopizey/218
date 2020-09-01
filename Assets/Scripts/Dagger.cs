@@ -17,8 +17,7 @@ public class Dagger : MonoBehaviour
         {
             m_cannon = p_cannon;
         }
-        transform.rotation = Quaternion.Euler(new Vector3(35, -31, -76));
-        Destroy(this.gameObject, 15);
+		Invoke("ShotMiss", 1.5f);
     }
     void Update()
     {
@@ -27,11 +26,16 @@ public class Dagger : MonoBehaviour
         }
     }
 
+	void ShotMiss()
+	{
+		ShootController.Instance.CanShoot = true;
+		Destroy(this.gameObject);
+	}
+
     void OnTriggerEnter(Collider p_col)
     {
         if ( p_col.tag == "Target")
         {
-            m_bShouldMove = false;
             if (m_cannon) {
                 //if (m_cannon.ObjectsToTele.Count == 0) { return; }
                 for (int i = 0; i < m_cannon.ObjectsToTele.Count; i++)
@@ -52,9 +56,17 @@ public class Dagger : MonoBehaviour
             else 
             {
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
-                player.transform.position = (p_col.transform.position - this.transform.position).normalized * 3;
+                player.transform.position = this.transform.position - (p_col.transform.position - m_shootDir).normalized * 3f;
+				ShootController.Instance.CanShoot = true;
             }
         }
-        Destroy(this.gameObject, 0.25f);
+		else 
+		{
+			ShootController.Instance.CanShoot = true;
+		}
+        m_bShouldMove = false;
+    	Destroy(this.gameObject, 0.1f);
     }
+
+	
 }

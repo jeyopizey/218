@@ -26,7 +26,7 @@ public class PropSpawner : MonoBehaviour
                                       this.transform.position.y + Random.Range(-m_yRange, m_yRange),
                                       this.transform.position.z + Random.Range(-m_zRange, m_zRange));
                 GameObject prop = Instantiate(m_props[Random.Range(0, m_props.Count)], randPos, Quaternion.identity);
-                float randSize = Random.Range(1, 1.3f);
+                float randSize = Random.Range(0.75f, 1.0f);
                 prop.transform.localScale = new Vector3(randSize, randSize, randSize);
                 Destroy(prop, Random.Range(11, 15));
             }
