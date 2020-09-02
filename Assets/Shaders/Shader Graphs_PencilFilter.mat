@@ -40,6 +40,6 @@ Material:
     - Vector1_7E9261B2: 0.25
     - Vector1_9D9EFD0D: 1
     - Vector1_EFC063D5: 1
-    - _ColorIntensity: 1
+    - _ColorIntensity: 0.6762814
     m_Colors:
     - Vector2_8F4F7BC: {r: 8, g: 8, b: 0, a: 0}

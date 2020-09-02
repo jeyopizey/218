@@ -9,8 +9,20 @@ public class HUDManager : MonoInstance<HUDManager>
 	[SerializeField]GameObject m_click;
 	
 	[SerializeField]Animator m_animController;
-	[SerializeField]GameObject UICamera;
+	[SerializeField]public GameObject UICamera;
 
+	private bool m_bIsInMainMenu;
+
+	void Update()
+	{
+		if ( m_bIsInMainMenu )
+		{
+			if ( Input.GetMouseButtonUp(0))
+			{
+				OnMainMenuClick();
+			}
+		}
+	}
 	void Start()
 	{
 		m_animController = transform.GetComponent<Animator>();
@@ -37,6 +49,8 @@ public class HUDManager : MonoInstance<HUDManager>
 		UICamera.SetActive(false);
 		PlayAnim("MainMenuFadeIn");
 		GameController.Instance.StartStage();
+		BGMManager.Instance.Play();
+		m_bIsInMainMenu = false;
 	}
 
 	public void PlayAnim(string p_string)
@@ -48,5 +62,10 @@ public class HUDManager : MonoInstance<HUDManager>
 	{
 		UICamera.SetActive(true);
 		FirstPersonAIO.Instance.gameObject.SetActive(false);
+	}
+	
+	public void IsInMainMenu()
+	{
+		m_bIsInMainMenu = true;
 	}
 }

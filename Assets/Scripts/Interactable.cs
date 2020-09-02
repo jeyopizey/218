@@ -32,6 +32,10 @@ public class Interactable : MonoBehaviour
 		}
 		else 
 		{
+			BGMManager.Instance.Pause();
+			HUDManager.Instance.UICamera.SetActive(true);
+			FirstPersonAIO.Instance.gameObject.SetActive(false);
+			HUDManager.Instance.PlayAnim("BadEnding");
 			Destroy(this.gameObject); //fade effect
 			//Bad ending.
 		}
