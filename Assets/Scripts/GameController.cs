@@ -20,7 +20,7 @@ public class GameController : MonoInstance<GameController>
 		// 	ShootController.Instance.CanShoot = true;
 		// }
 		// StartStage();
-		PlayerPrefs.DeleteAll();
+		// PlayerPrefs.DeleteAll();
 	}
 
 	public void StartStage()
