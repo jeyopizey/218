@@ -60,8 +60,9 @@ public class Dagger : MonoBehaviour
 				ShootController.Instance.CanShoot = true;
             }
         }
-		else 
+		else
 		{
+			if ( m_cannon ) { return; }
 			ShootController.Instance.CanShoot = true;
 		}
         m_bShouldMove = false;

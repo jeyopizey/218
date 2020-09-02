@@ -15,19 +15,29 @@ public class GameController : MonoInstance<GameController>
     private Transform m_respawnPos;
 	void Start()
 	{
-		if (m_currentStage == 2)
-		{
-			ShootController.Instance.CanShoot = true;
-		}
-		CheckpointManager.Instance.CurrentCheckpoint = StartPointManager.Instance.StartPoint;
+		// if (m_currentStage == 2)
+		// {
+		// 	ShootController.Instance.CanShoot = true;
+		// }
+		// StartStage();
+		PlayerPrefs.DeleteAll();
 	}
 
 	public void StartStage()
 	{
+		StartCoroutine(LoadSceneSequence());
+	}
+	IEnumerator LoadSceneSequence()
+	{
+		// m_currentStage = PlayerPrefs.GetInt("CurrentStage");
+		yield return new WaitForSeconds (1.0f);
+		m_player.SetActive(true);
+		SceneManager.LoadScene("Stage"+ (GameController.Instance.CurrentStage + 1) );
+		m_walkSpeed = m_playerSpeed[m_currentStage];
+		m_player.transform.position = StartPointManager.Instance.StartPoint.position;
+		yield return new WaitForSeconds (0.25f);
 		CheckpointManager.Instance.CurrentCheckpoint = StartPointManager.Instance.StartPoint;
 		m_playerCamera.localPosition = new Vector3(0, m_cameraHeight[m_currentStage], 0);
-		m_walkSpeed = m_playerSpeed[m_currentStage];
-		SceneManager.LoadScene("Stage"+ (GameController.Instance.CurrentStage + 1) );
 	}
 
 	public void Respawn()

@@ -11,7 +11,7 @@ public class Interactable : MonoBehaviour
 
 	public void Interact()
 	{
-		if (m_dagger)
+		if (m_dagger == true)
 		{
 			HUDManager.Instance.SetClickActive(true);
 			ShootController.Instance.CanShoot = true;
@@ -19,7 +19,7 @@ public class Interactable : MonoBehaviour
 			return;
 		}
 
-		if (m_good)
+		if (m_good == true)
 		{
 			if (m_enableObject)
 			{
@@ -32,6 +32,7 @@ public class Interactable : MonoBehaviour
 		}
 		else 
 		{
+			Destroy(this.gameObject); //fade effect
 			//Bad ending.
 		}
 	}
