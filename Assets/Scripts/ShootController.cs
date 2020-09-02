@@ -29,6 +29,8 @@ public class ShootController : MonoInstance<ShootController>
 			}
 		}
 
+		if ( GameController.Instance.CurrentStage < 2 ) { return; }
+
 		if ( m_canShoot )
 		{
 			if(Physics.Raycast (m_camera.transform.position, m_camera.transform.forward, out hit, 500))

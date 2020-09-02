@@ -34,7 +34,6 @@ public class HUDManager : MonoInstance<HUDManager>
 
 	public void OnMainMenuClick()
 	{
-		Debug.Log(">>>>>");
 		UICamera.SetActive(false);
 		PlayAnim("MainMenuFadeIn");
 		GameController.Instance.StartStage();
