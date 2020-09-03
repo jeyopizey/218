@@ -252,6 +252,7 @@ public class FirstPersonAIO : MonoInstance<FirstPersonAIO> {
         #endregion 
 
         #region Movement Settings - Awake
+		walkSpeed = GameController.Instance.WalkSpeed;
         walkSpeedInternal = walkSpeed;
         sprintSpeedInternal = sprintSpeed;
         jumpPowerInternal = jumpPower;
@@ -377,7 +378,7 @@ public class FirstPersonAIO : MonoInstance<FirstPersonAIO> {
         #endregion
 
         #region Movement Settings - Update
-        
+		walkSpeed = GameController.Instance.WalkSpeed;
         #endregion
 
         #region Headbobbing Settings - Update

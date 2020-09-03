@@ -2088,7 +2088,7 @@ MonoBehaviour:
   - 5.5
   - 9
   - 9
-  m_walkSpeed: 9
+  m_walkSpeed: 5.5
 --- !u!114 &1822763663
 MonoBehaviour:
   m_ObjectHideFlags: 0
