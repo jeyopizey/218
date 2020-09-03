@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_material: {fileID: 2100000, guid: 81191b759d2e5204fb157a70babbe4c1, type: 2}
+  m_min: 0.3
+  m_max: 0.95

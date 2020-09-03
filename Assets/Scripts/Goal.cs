@@ -11,9 +11,9 @@ public class Goal : MonoBehaviour
 			if ( GameController.Instance.CurrentStage == 2 )
 			{
 				HUDManager.Instance.PlayAnim("GoodEnding");
-				// PlayerPrefs.SetInt("CurrentStage", 0);
-				PlayerPrefs.SetInt("CurrentStage", 0);
 				GameController.Instance.CurrentStage = 0;
+				PlayerPrefs.SetInt("CurrentStage", GameController.Instance.CurrentStage);
+				PlayerPrefs.Save();
 			}
 			else
 			{
@@ -23,4 +23,5 @@ public class Goal : MonoBehaviour
 			}
 		}
 	}
+
 }

@@ -10,6 +10,9 @@ public class PencilManager : MonoBehaviour
 	private float m_elapsedTime = 0.0f;
 	private float m_waitTime = 4.0f;
 
+	[SerializeField]float m_min;
+	[SerializeField]float m_max;
+
 	void Start()
 	{
 		InvokeRepeating("PencilSequence", 5.0f, 10.0f);
@@ -18,7 +21,7 @@ public class PencilManager : MonoBehaviour
 	void PencilSequence()
 	{
 		Debug.Log("PencilSequence");
-		m_colorIntensity = Random.Range(0.3f, 0.95f);
+		m_colorIntensity = Random.Range(m_min, m_max);
 		StartCoroutine(DoPencilSequence());
 	}
 

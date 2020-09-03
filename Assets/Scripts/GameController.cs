@@ -29,7 +29,7 @@ public class GameController : MonoInstance<GameController>
 	}
 	IEnumerator LoadSceneSequence()
 	{
-		// m_currentStage = PlayerPrefs.GetInt("CurrentStage");
+		m_currentStage = PlayerPrefs.GetInt("CurrentStage");
 		yield return new WaitForSeconds (1.0f);
 		m_player.SetActive(true);
 		SceneManager.LoadScene("Stage"+ (GameController.Instance.CurrentStage + 1) );
@@ -38,6 +38,14 @@ public class GameController : MonoInstance<GameController>
 		yield return new WaitForSeconds (0.25f);
 		CheckpointManager.Instance.CurrentCheckpoint = StartPointManager.Instance.StartPoint;
 		m_playerCamera.localPosition = new Vector3(0, m_cameraHeight[m_currentStage], 0);
+		if ( m_currentStage == 0 )
+		{
+			yield return new WaitForSeconds (4.0f);
+			HUDManager.Instance.PlayAnim("Am");
+		} else if (m_currentStage == 1) {
+			yield return new WaitForSeconds (4.0f);
+			HUDManager.Instance.PlayAnim("AmI");
+		}
 	}
 
 	public void Respawn()
