@@ -7,8 +7,17 @@ public class ShootController : MonoInstance<ShootController>
     [SerializeField]Transform m_spawnPoint;
 	[SerializeField]GameObject m_bullet;
 	[SerializeField]Camera m_camera;
+	[SerializeField]AudioClip m_teleAudio;
+	[SerializeField]AudioClip m_shootAudio;
+	[SerializeField]AudioClip m_goalAudio;
+	AudioSource m_audioSource;
 
 	private bool m_canShoot = false;
+
+	void Start()
+	{
+		m_audioSource = transform.GetComponent<AudioSource>();
+	}
 	void Update()
 	{
 		RaycastHit hit;
@@ -41,14 +50,22 @@ public class ShootController : MonoInstance<ShootController>
 					GameObject dagger = Instantiate(m_bullet, m_spawnPoint.position, Quaternion.identity);
             		dagger.transform.GetComponent<Dagger>().SetUp((hit.point - m_spawnPoint.position).normalized);
 					m_canShoot = false;
+					m_audioSource.PlayOneShot(m_shootAudio);
 				}
 			}
 		}
 	}
-
 	public bool CanShoot
 	{
 		get { return m_canShoot; }
 		set { m_canShoot = value; }
+	}
+	public void PlayTeleAudio()
+	{
+		m_audioSource.PlayOneShot(m_teleAudio);
+	}
+	public void PlayGoalAudio()
+	{
+		m_audioSource.PlayOneShot(m_goalAudio);
 	}
 }

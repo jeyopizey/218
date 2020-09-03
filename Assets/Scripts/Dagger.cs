@@ -50,14 +50,16 @@ public class Dagger : MonoBehaviour
                                                                                     // this.transform.position.z + Random.Range(0.1f, 0.5f));
                     } else {
                     	m_cannon.ObjectsToTele[i].transform.position = this.transform.position - (p_col.transform.position - m_shootDir).normalized * 2.5f;
+						ShootController.Instance.PlayTeleAudio();
 					}
                 }
             }
             else 
             {
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-                player.transform.position = this.transform.position - (p_col.transform.position - m_shootDir).normalized * 3f;
+                // GameObject player = GameObject.FindGameObjectWithTag("Player");
+                FirstPersonAIO.Instance.transform.position = this.transform.position - (p_col.transform.position - m_shootDir).normalized * 3f;
 				ShootController.Instance.CanShoot = true;
+				ShootController.Instance.PlayTeleAudio();
             }
         }
 		else

@@ -18,6 +18,7 @@ public class Goal : MonoBehaviour
 			else
 			{
 				HUDManager.Instance.PlayAnim("WhiteFadeIn");
+				ShootController.Instance.PlayGoalAudio();
 				LevelManager.Instance.LoadNextLevel();
 			}
 		}

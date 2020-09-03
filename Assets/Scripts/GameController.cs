@@ -43,6 +43,7 @@ public class GameController : MonoInstance<GameController>
 	public void Respawn()
 	{
 		m_player.transform.position = CheckpointManager.Instance.CurrentCheckpoint.position;
+		ShootController.Instance.PlayTeleAudio();
 	}
 
 	public int CurrentStage

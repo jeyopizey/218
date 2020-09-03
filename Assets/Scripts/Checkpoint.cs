@@ -8,10 +8,20 @@ public class Checkpoint : MonoBehaviour
 	[SerializeField]GameObject m_object;
 	[SerializeField]bool m_enableObject;
 	[SerializeField]List<GameObject> m_objectsToEnable = new List<GameObject>(); 
+	[SerializeField]AudioClip m_audio;
+	AudioSource m_audioSource;
+
+	private bool m_bCollected;
+
+	void Start()
+	{
+		m_bCollected = false;
+		m_audioSource = transform.GetComponent<AudioSource>();
+	}
 
 	void OnTriggerEnter(Collider col) 
 	{
-		if (col.tag == "Player") {
+		if (col.tag == "Player" && !m_bCollected) {
 			CheckpointManager.Instance.CurrentCheckpoint = m_checkpoint;
 			
 			if (m_enableObject)
@@ -22,6 +32,8 @@ public class Checkpoint : MonoBehaviour
 				}
 			}
 			m_object.SetActive(false);
+			m_audioSource.PlayOneShot(m_audio);
+			m_bCollected = true;
 		}
 	}
 }
