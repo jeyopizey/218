@@ -30,6 +30,7 @@ public class GameController : MonoInstance<GameController>
 	IEnumerator LoadSceneSequence()
 	{
 		m_currentStage = PlayerPrefs.GetInt("CurrentStage");
+		// m_currentStage = 2;
 		yield return new WaitForSeconds (1.0f);
 		m_player.SetActive(true);
 		SceneManager.LoadScene("Stage"+ (GameController.Instance.CurrentStage + 1) );
@@ -51,7 +52,7 @@ public class GameController : MonoInstance<GameController>
 	public void Respawn()
 	{
 		m_player.transform.position = CheckpointManager.Instance.CurrentCheckpoint.position;
-		ShootController.Instance.PlayTeleAudio();
+		ShootController.Instance.PlayFallAudio();
 	}
 
 	public int CurrentStage

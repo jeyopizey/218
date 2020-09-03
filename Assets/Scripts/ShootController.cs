@@ -10,6 +10,7 @@ public class ShootController : MonoInstance<ShootController>
 	[SerializeField]AudioClip m_teleAudio;
 	[SerializeField]AudioClip m_shootAudio;
 	[SerializeField]AudioClip m_goalAudio;
+	[SerializeField]AudioClip m_fallAudio;
 	AudioSource m_audioSource;
 
 	private bool m_canShoot = false;
@@ -67,5 +68,9 @@ public class ShootController : MonoInstance<ShootController>
 	public void PlayGoalAudio()
 	{
 		m_audioSource.PlayOneShot(m_goalAudio);
+	}
+	public void PlayFallAudio()
+	{
+		m_audioSource.PlayOneShot(m_fallAudio);
 	}
 }

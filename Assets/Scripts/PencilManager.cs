@@ -10,12 +10,12 @@ public class PencilManager : MonoBehaviour
 	private float m_elapsedTime = 0.0f;
 	private float m_waitTime = 4.0f;
 
-	[SerializeField]float m_min;
-	[SerializeField]float m_max;
+	[SerializeField]float m_min = 0.3f;
+	[SerializeField]float m_max = 0.95f;
 
 	void Start()
 	{
-		InvokeRepeating("PencilSequence", 5.0f, 10.0f);
+		InvokeRepeating("PencilSequence", 10.0f, 10.0f);
 	}
 
 	void PencilSequence()
@@ -39,5 +39,6 @@ public class PencilManager : MonoBehaviour
 			yield return null;
 		}
 		m_elapsedTime = 0;
+		StopCoroutine(DoPencilSequence());
 	}
 }

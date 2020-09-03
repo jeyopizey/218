@@ -12,6 +12,7 @@ public class Goal : MonoBehaviour
 			{
 				HUDManager.Instance.PlayAnim("GoodEnding");
 				GameController.Instance.CurrentStage = 0;
+				FirstPersonAIO.Instance.gameObject.SetActive(false);
 				PlayerPrefs.SetInt("CurrentStage", GameController.Instance.CurrentStage);
 				PlayerPrefs.Save();
 			}
