@@ -10,6 +10,7 @@ public class Goal : MonoBehaviour
 
 			if ( GameController.Instance.CurrentStage == 2 )
 			{
+				BGMManager.Instance.Pause();
 				HUDManager.Instance.PlayAnim("GoodEnding");
 				GameController.Instance.CurrentStage = 0;
 				FirstPersonAIO.Instance.gameObject.SetActive(false);
